@@ -65,11 +65,11 @@ st.text('This gives an indication of current implementation stats. Allows us to 
 
 col3, col4 = st.columns(2)
 with col3:
-    st.subheader('Sessions per Mentor')
+    st.subheader('Sessions per Mentor (May)')
     st.dataframe(data=may_sessions_per_school,width=500,height=300)
 
 with col4:
-    st.subheader('Sessions per School')
+    st.subheader('Sessions per School (May)')
     st.dataframe(data=may_mentor_sessions, width=500, height=300)
 
 st.header('ECDC Results')
@@ -83,7 +83,7 @@ col5, col6 = st.columns(2)
 
 with col5:
     st.subheader('Sessions per Mentor')
-    st.dataframe(data=ecd_mentor_sessions,width=500,height=300)
+    st.dataframe(data=ecd_mentor_sessions,width=500,height=200)
 
 with col6:
     st.subheader('Sessions per ECD')
@@ -97,10 +97,10 @@ st.text('This gives an indication of current implementation stats. Allows us to 
 
 col7, col8 = st.columns(2)
 with col7:
-    st.subheader('Sessions per Mentor')
+    st.subheader('Sessions per Mentor (May)')
     st.dataframe(data=ecd_may_sessions_per_school,width=500,height=300)
 
 with col8:
-    st.subheader('Sessions per School')
+    st.subheader('Sessions per School (May)')
     st.dataframe(data=ecd_may_mentor_sessions, width=500, height=300)
 

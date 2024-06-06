@@ -12,8 +12,8 @@ ecd = sessions[sessions['Grade'] == "PreR"]
 # Primary Dataframe Calculations
 mentor_sessions = primary.groupby('Mentor')['Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
 sessions_per_school = primary.groupby(['School', 'Mentor'])['Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
-may_mentor_sessions = primary.groupby(['School', 'Mentor'])['May Total Sessions'].mean().sort_values(ascending=False).to_frame()
-may_sessions_per_school = primary.groupby('Mentor')['May Total Sessions'].mean().sort_values(ascending=False).to_frame()
+may_mentor_sessions = primary.groupby(['School', 'Mentor'])['May Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
+may_sessions_per_school = primary.groupby('Mentor')['May Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
 display_all_months = primary.groupby(['School', 'Mentor']).agg(
     Mar_Sessions=('Jan - March Total Sessions', 'mean'),
     Apr_Sessions=('April Total Sessions', 'mean'),
@@ -24,8 +24,8 @@ display_all_months = primary.groupby(['School', 'Mentor']).agg(
 # ECD Dataframe Calculations
 ecd_mentor_sessions = ecd.groupby('Mentor')['Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
 ecd_sessions_per_school = ecd.groupby(['School', 'Mentor'])['Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
-ecd_may_mentor_sessions = ecd.groupby(['School', 'Mentor'])['May Total Sessions'].mean().sort_values(ascending=False).to_frame()
-ecd_may_sessions_per_school = ecd.groupby('Mentor')['May Total Sessions'].mean().sort_values(ascending=False).to_frame()
+ecd_may_mentor_sessions = ecd.groupby(['School', 'Mentor'])['May Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
+ecd_may_sessions_per_school = ecd.groupby('Mentor')['May Total Sessions'].mean().round(1).sort_values(ascending=False).to_frame()
 ecd_display_all_months = ecd.groupby(['School', 'Mentor']).agg(
     Mar_Sessions=('Jan - March Total Sessions', 'mean'),
     Apr_Sessions=('April Total Sessions', 'mean'),
@@ -86,7 +86,7 @@ with col5:
     st.dataframe(data=ecd_mentor_sessions,width=500,height=300)
 
 with col6:
-    st.subheader('Sessions per School')
+    st.subheader('Sessions per ECD')
     st.dataframe(data=ecd_sessions_per_school, width=500, height=300)
 
 st.subheader('Sessions per Month')
